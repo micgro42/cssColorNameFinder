@@ -1,0 +1,10 @@
+dist/*
+!dist/.keep
+built/
+coverage/
+
+node_modules/
+
+.idea/
+cssnames.iml
+
