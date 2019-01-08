@@ -5,7 +5,7 @@ install:
   - yarn install
 
 script:
-  - yarn test
+  - yarn testWithCoverage --coverageReporters=text-lcov | coveralls
   - yarn build
 
 before_deploy:
