@@ -31,7 +31,7 @@ const v = new Vue({
     },
     el: '#app',
     template: `
-    <div>
+    <div class="app">
         <h1>CSS Color Name Finder</h1>
         <introCard v-if="similarColors.length === 0"></introCard>
         <label>Pick a color: <input v-model="name" type="color"></label>
