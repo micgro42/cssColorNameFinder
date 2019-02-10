@@ -1,7 +1,10 @@
 export default {
-    template: `<p class="introCard">
-There are far over a hundred named colors in css, but they are rarely used.
-This app helps to use them more by providing names of colors similar to your favorite color.
-Just pick a color and it will show you the named colors that are closest to it. 🎨
-</p>`,
+    template: `<section class="introCard">
+<p>
+There are over a hundred named colors in CSS, but they are rarely used.
+</p>
+<p>
+This app helps you to use them more by showing names of colors that are similar to your favorite color. 🎨
+</p>
+</section>`,
 };

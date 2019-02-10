@@ -2,16 +2,23 @@
   margin-top: 1rem;
   padding: 1rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: white;
-}
+  background-color: white; }
 
 .similarColorCard__header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-}
+  align-items: baseline; }
 
 .similarColorCard__colorArea {
   min-height: 10vh;
-  border: 1px solid grey;
-}
+  border: 1px solid grey; }
+
+body {
+  background-color: whitesmoke; }
+
+.app {
+  max-width: 420px;
+  margin: auto; }
+
+
+/*# sourceMappingURL=main.css.map*/
