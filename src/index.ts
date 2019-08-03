@@ -1,13 +1,13 @@
 import Vue from 'vue';
-import introCard from './components/introCard/introCard';
-import similarColorCard from './components/similarColorCard/similarColorCard';
+import IntroCard from './components/IntroCard/IntroCard';
+import SimilarColorCard from './components/SimilarColorCard/SimilarColorCard';
 import SortColorsRequest from './usecases/SortColors/SortColorsRequest';
 import UseCaseFactory from './usecases/UseCaseFactory';
 
 const v = new Vue({
     components: {
-        introCard,
-        similarColorCard,
+        IntroCard,
+        SimilarColorCard,
     },
     computed: {
         similarColors() {
@@ -33,16 +33,16 @@ const v = new Vue({
     template: `
     <div class="app">
         <h1>CSS Color Name Finder</h1>
-        <introCard v-if="similarColors.length === 0"></introCard>
+        <IntroCard v-if="similarColors.length === 0"></IntroCard>
         <label>Pick a color: <input v-model="name" type="color"></label>
         <div v-if="similarColors.length > 0">
         <h2>Colors close to {{name}}:</h2>
-        <similarColorCard
+        <SimilarColorCard
             v-for="color in similarColors"
             v-bind:key="color[0]"
             v-bind:colorName="color[0]"
             v-bind:distance="color[1]"
-        ></similarColorCard>
+        ></SimilarColorCard>
         </div>
     </div>`,
 });

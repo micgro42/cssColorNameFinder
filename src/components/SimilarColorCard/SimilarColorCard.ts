@@ -1,4 +1,4 @@
-import './similarColorCard.scss';
+import './SimilarColorCard.scss';
 
 export default {
     props: [
