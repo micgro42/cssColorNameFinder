@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimilarColorCard matches snapshot 1`] = `
+<div
+  class="similarColorCard"
+>
+  <div
+    class="similarColorCard__header"
+  >
+    <h3>
+      red
+    </h3>
+     
+    <p>
+      Distance: 7
+    </p>
+  </div>
+   
+  <div
+    class="similarColorCard__colorArea"
+    style="background-color: red;"
+  />
+</div>
+`;
