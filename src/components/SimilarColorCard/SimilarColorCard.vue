@@ -1,7 +1,7 @@
 <template>
     <div class="similarColorCard">
         <div class="similarColorCard__header">
-            <h3>{{ colorName }}</h3> <p>Distance: {{ Math.round(distance) }}</p>
+            <h3>{{ colorName }}</h3> <p>Distance: {{ roundedDistance }}</p>
         </div>
         <div
                 class="similarColorCard__colorArea"
@@ -11,11 +11,22 @@
 </template>
 
 <script lang="ts">
+
+interface SimilarColorCardThis {
+    distance: number;
+    roundedDistance: () => number
+}
+
 export default {
     props: [
         'colorName',
         'distance',
     ],
+    computed: {
+        roundedDistance() {
+            return Math.round((this as SimilarColorCardThis).distance);
+        }
+    }
 };
 </script>
 

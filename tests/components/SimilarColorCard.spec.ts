@@ -6,7 +6,7 @@ describe( 'SimilarColorCard', () => {
         const wrapper = shallowMount(SimilarColorCard, {
             propsData: {
                 colorName: 'red',
-                distance: 7,
+                distance: 7.1,
             }});
         expect(wrapper.element).toMatchSnapshot();
     } );
