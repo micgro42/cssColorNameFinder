@@ -1,7 +1,10 @@
 built/
+dist/
 coverage/
 
 node_modules/
+
+yarn-error.log
 
 .idea/
 cssnames.iml

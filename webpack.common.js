@@ -1,4 +1,5 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: ['./src/index.ts', './src/styles/global.scss'],
@@ -36,5 +37,6 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
+    plugins: [new VueLoaderPlugin()]
 };
 
