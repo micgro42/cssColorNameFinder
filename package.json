@@ -35,7 +35,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "serve": "webpack-dev-server --open --config webpack.dev.js",
     "lint": "tslint --format codeFrame --project tsconfig.json",
     "test": "jest",
     "testWithCoverage": "jest --coverage"
