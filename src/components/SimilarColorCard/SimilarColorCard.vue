@@ -14,14 +14,21 @@
 
 interface SimilarColorCardThis {
     distance: number;
+    colorName: string;
     roundedDistance: () => number
 }
 
 export default {
-    props: [
-        'colorName',
-        'distance',
-    ],
+    props: {
+        colorName: {
+            type: String,
+            required: true,
+        },
+        distance: {
+            type: Number,
+            required: true,
+        },
+    },
     computed: {
         roundedDistance() {
             return Math.round((this as SimilarColorCardThis).distance);
