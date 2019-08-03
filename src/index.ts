@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import IntroCard from './components/IntroCard/IntroCard';
-import SimilarColorCard from './components/SimilarColorCard/SimilarColorCard';
+import IntroCard from './components/IntroCard/IntroCard.vue';
+import SimilarColorCard from './components/SimilarColorCard/SimilarColorCard.vue';
 import SortColorsRequest from './usecases/SortColors/SortColorsRequest';
 import UseCaseFactory from './usecases/UseCaseFactory';
 
