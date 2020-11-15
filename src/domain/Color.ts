@@ -5,12 +5,7 @@ export default class Color {
     private colorName: string;
     private distance?: number;
 
-    constructor(
-        red: number,
-        green: number,
-        blue: number,
-        colorName: string,
-    ) {
+    constructor(red: number, green: number, blue: number, colorName: string) {
         this.red = red;
         this.green = green;
         this.blue = blue;
@@ -19,9 +14,7 @@ export default class Color {
 
     public calculateDistanceRGB(red: number, green: number, blue: number) {
         this.distance = Math.sqrt(
-            Math.pow(this.red - red, 2)
-            + Math.pow(this.green - green, 2)
-            + Math.pow(this.blue - blue, 2),
+            Math.pow(this.red - red, 2) + Math.pow(this.green - green, 2) + Math.pow(this.blue - blue, 2),
         );
     }
 
@@ -39,5 +32,4 @@ export default class Color {
     public getName(): string {
         return this.colorName;
     }
-
 }
