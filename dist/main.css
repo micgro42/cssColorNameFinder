@@ -1,25 +1,6 @@
-.similarColorCard[data-v-a2507862] {
-  margin-top: 1rem;
-  padding: 1rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: white;
-}
-.similarColorCard__header[data-v-a2507862] {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.similarColorCard__colorArea[data-v-a2507862] {
-  min-height: 10vh;
-  border: 1px solid grey;
-}
+.similarColorCard[data-v-a2507862]{margin-top:1rem;padding:1rem;box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);background-color:white}.similarColorCard__header[data-v-a2507862]{display:flex;justify-content:space-between;align-items:baseline}.similarColorCard__colorArea[data-v-a2507862]{min-height:10vh;border:1px solid grey}
 
-body {
-  background-color: whitesmoke; }
-
-.app {
-  max-width: 420px;
-  margin: auto; }
+body{background-color:whitesmoke}.app{max-width:420px;margin:auto}
 
 
 /*# sourceMappingURL=main.css.map*/
