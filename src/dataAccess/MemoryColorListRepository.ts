@@ -5,7 +5,7 @@ import IColorListRepository from '../domain/IColorListRepository';
 export default class MemoryColorListRepository implements IColorListRepository {
     public getColorList(): ColorList {
         const colors: {
-            [index: string]: [number, number, number],
+            [index: string]: [number, number, number];
         } = {
             aliceblue: [240, 248, 255],
             antiquewhite: [250, 235, 215],
@@ -156,12 +156,11 @@ export default class MemoryColorListRepository implements IColorListRepository {
             yellowgreen: [154, 205, 50],
         };
 
-        return new ColorList(Object.keys(colors).map(
-            (colorName: string) => {
+        return new ColorList(
+            Object.keys(colors).map((colorName: string) => {
                 const [red, green, blue] = colors[colorName];
                 return new Color(red, green, blue, colorName);
-            },
-        ));
+            }),
+        );
     }
-
 }

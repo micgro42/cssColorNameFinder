@@ -23,11 +23,12 @@ const v = new Vue({
             const requestModel = new SortColorsRequest(red, green, blue);
             const responseModel = sortColorsUC.sortColors(requestModel);
             return responseModel.getThreeNearestColors();
-
         },
     },
-    data: {
-        name: '',
+    data() {
+        return {
+            name: '',
+        };
     },
     el: '#app',
     template: `
