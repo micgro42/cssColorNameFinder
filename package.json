@@ -2,7 +2,7 @@
   "name": "cssnames",
   "version": "1.0.0",
   "description": "A web app to get css color names similar to a given color",
-  "main": "index.js",
+  "main": "main.ts",
   "author": "Michael Große",
   "license": "AGPL-3.0-or-later",
   "devDependencies": {
