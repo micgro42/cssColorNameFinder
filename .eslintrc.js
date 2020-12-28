@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/array-type': ['error', { default: 'array' }],
         '@typescript-eslint/explicit-module-boundary-types': ['error'],
+        '@typescript-eslint/explicit-function-return-type': ['error'],
     },
     overrides: [
         {
