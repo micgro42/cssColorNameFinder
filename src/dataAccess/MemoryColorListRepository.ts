@@ -158,7 +158,11 @@ export default class MemoryColorListRepository implements ColorListRepository {
 
         return new ColorList(
             Object.keys(colors).map((colorName: string) => {
-                const [red, green, blue] = colors[colorName];
+                const color = colors[colorName];
+                if (!color) {
+                    throw new Error(`unknown color name: ${colorName}!`);
+                }
+                const [red, green, blue] = color;
                 return new Color(red, green, blue, colorName);
             }),
         );

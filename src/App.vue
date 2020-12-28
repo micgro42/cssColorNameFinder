@@ -30,7 +30,7 @@ export default Vue.extend({
   computed: {
     similarColors() {
       const parsedInput = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(this.name);
-      if (!parsedInput) {
+      if (!parsedInput || !parsedInput[1] || !parsedInput[2] || !parsedInput[3]) {
         return [];
       }
       const red: number = parseInt(parsedInput[1], 16);
