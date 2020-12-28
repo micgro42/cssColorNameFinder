@@ -1,12 +1,12 @@
 import ColorList from '../../domain/ColorList';
-import IColorListRepository from '../../domain/IColorListRepository';
+import ColorListRepository from '../../domain/ColorListRepository';
 import SortColorsRequest from './SortColorsRequest';
 import SortColorsResponse from './SortColorsResponse';
 
 export default class SortColorsUseCase {
-    private repository: IColorListRepository; // FIXME: add type
+    private repository: ColorListRepository; // FIXME: add type
 
-    constructor(repository: IColorListRepository) {
+    constructor(repository: ColorListRepository) {
         this.repository = repository;
     }
 

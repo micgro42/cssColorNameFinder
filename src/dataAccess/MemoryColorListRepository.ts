@@ -1,8 +1,8 @@
 import Color from '../domain/Color';
 import ColorList from '../domain/ColorList';
-import IColorListRepository from '../domain/IColorListRepository';
+import ColorListRepository from '../domain/ColorListRepository';
 
-export default class MemoryColorListRepository implements IColorListRepository {
+export default class MemoryColorListRepository implements ColorListRepository {
     public getColorList(): ColorList {
         const colors: {
             [index: string]: [number, number, number];

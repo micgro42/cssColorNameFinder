@@ -1,4 +1,4 @@
 import ColorList from './ColorList';
-export default interface IColorListRepository {
+export default interface ColorListRepository {
     getColorList(): ColorList;
 }
