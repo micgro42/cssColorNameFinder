@@ -23,6 +23,7 @@ module.exports = {
         '@typescript-eslint/array-type': ['error', { default: 'array' }],
         '@typescript-eslint/explicit-module-boundary-types': ['error'],
         '@typescript-eslint/explicit-function-return-type': ['error'],
+        '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'explicit' }],
     },
     overrides: [
         {

@@ -1,7 +1,7 @@
 export default class SortColorsResponse {
     private sortedColors: [string, number][];
 
-    constructor(sortedColors: [string, number][]) {
+    public constructor(sortedColors: [string, number][]) {
         this.sortedColors = sortedColors;
     }
 

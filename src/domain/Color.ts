@@ -5,7 +5,7 @@ export default class Color {
     private colorName: string;
     private distance?: number;
 
-    constructor(red: number, green: number, blue: number, colorName: string) {
+    public constructor(red: number, green: number, blue: number, colorName: string) {
         this.red = red;
         this.green = green;
         this.blue = blue;

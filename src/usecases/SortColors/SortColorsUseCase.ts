@@ -6,7 +6,7 @@ import SortColorsResponse from './SortColorsResponse';
 export default class SortColorsUseCase {
     private repository: ColorListRepository; // FIXME: add type
 
-    constructor(repository: ColorListRepository) {
+    public constructor(repository: ColorListRepository) {
         this.repository = repository;
     }
 
