@@ -1,8 +1,8 @@
 import Color from '../domain/Color';
 import ColorList from '../domain/ColorList';
-import IColorListRepository from '../domain/IColorListRepository';
+import ColorListRepository from '../domain/ColorListRepository';
 
-export default class MemoryColorListRepository implements IColorListRepository {
+export default class MemoryColorListRepository implements ColorListRepository {
     public getColorList(): ColorList {
         const colors: {
             [index: string]: [number, number, number];
@@ -158,7 +158,11 @@ export default class MemoryColorListRepository implements IColorListRepository {
 
         return new ColorList(
             Object.keys(colors).map((colorName: string) => {
-                const [red, green, blue] = colors[colorName];
+                const color = colors[colorName];
+                if (!color) {
+                    throw new Error(`unknown color name: ${colorName}!`);
+                }
+                const [red, green, blue] = color;
                 return new Color(red, green, blue, colorName);
             }),
         );

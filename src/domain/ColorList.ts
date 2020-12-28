@@ -3,7 +3,7 @@ import Color from './Color';
 export default class ColorList {
     private colors: Color[];
 
-    constructor(colors: Color[]) {
+    public constructor(colors: Color[]) {
         this.colors = colors;
     }
 
@@ -20,7 +20,7 @@ export default class ColorList {
         });
     }
 
-    public getColorNamesDistance(): Array<[string, number]> {
+    public getColorNamesDistance(): [string, number][] {
         return this.colors.map((color: Color) => [color.getName(), color.getDistance()] as [string, number]);
     }
 }

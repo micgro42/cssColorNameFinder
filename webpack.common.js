@@ -2,7 +2,7 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-    entry: ['./src/index.ts', './src/styles/global.scss'],
+    entry: ['./src/main.ts', './src/styles/global.scss'],
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',

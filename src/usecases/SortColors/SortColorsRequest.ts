@@ -3,7 +3,7 @@ export default class SortColorsRequest {
     private green: number;
     private blue: number;
 
-    constructor(red: number, green: number, blue: number) {
+    public constructor(red: number, green: number, blue: number) {
         this.red = red;
         this.blue = blue;
         this.green = green;

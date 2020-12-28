@@ -5,14 +5,14 @@ export default class Color {
     private colorName: string;
     private distance?: number;
 
-    constructor(red: number, green: number, blue: number, colorName: string) {
+    public constructor(red: number, green: number, blue: number, colorName: string) {
         this.red = red;
         this.green = green;
         this.blue = blue;
         this.colorName = colorName;
     }
 
-    public calculateDistanceRGB(red: number, green: number, blue: number) {
+    public calculateDistanceRGB(red: number, green: number, blue: number): void {
         this.distance = Math.sqrt(
             Math.pow(this.red - red, 2) + Math.pow(this.green - green, 2) + Math.pow(this.blue - blue, 2),
         );

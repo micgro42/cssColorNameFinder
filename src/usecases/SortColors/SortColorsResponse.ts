@@ -1,11 +1,11 @@
 export default class SortColorsResponse {
-    private sortedColors: Array<[string, number]>;
+    private sortedColors: [string, number][];
 
-    constructor(sortedColors: Array<[string, number]>) {
+    public constructor(sortedColors: [string, number][]) {
         this.sortedColors = sortedColors;
     }
 
-    public getThreeNearestColors() {
+    public getThreeNearestColors(): [string, number][] {
         return this.sortedColors.slice(0, 3);
     }
 }
