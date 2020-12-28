@@ -12,7 +12,7 @@ export default class Color {
         this.colorName = colorName;
     }
 
-    public calculateDistanceRGB(red: number, green: number, blue: number) {
+    public calculateDistanceRGB(red: number, green: number, blue: number): void {
         this.distance = Math.sqrt(
             Math.pow(this.red - red, 2) + Math.pow(this.green - green, 2) + Math.pow(this.blue - blue, 2),
         );

@@ -5,7 +5,7 @@ export default class SortColorsResponse {
         this.sortedColors = sortedColors;
     }
 
-    public getThreeNearestColors() {
+    public getThreeNearestColors(): [string, number][] {
         return this.sortedColors.slice(0, 3);
     }
 }
