@@ -20,6 +20,7 @@ module.exports = {
     },
     rules: {
         '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/array-type': ['error', { default: 'array' }],
     },
     overrides: [
         {

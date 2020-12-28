@@ -20,7 +20,7 @@ export default class ColorList {
         });
     }
 
-    public getColorNamesDistance(): Array<[string, number]> {
+    public getColorNamesDistance(): [string, number][] {
         return this.colors.map((color: Color) => [color.getName(), color.getDistance()] as [string, number]);
     }
 }
