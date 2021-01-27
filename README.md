@@ -11,9 +11,10 @@ It uses jest as testing framework that natively works with both Typescript and V
 
 ## CI
 
+<<<<<<< HEAD
+
 - [![Build Status](https://travis-ci.com/micgro42/cssColorNameFinder.svg?branch=master)](https://travis-ci.com/micgro42/cssColorNameFinder)
 - [![Maintainability](https://api.codeclimate.com/v1/badges/da6d61da0e95ceece874/maintainability)](https://codeclimate.com/github/micgro42/cssColorNameFinder/maintainability)
 - [![CodeFactor](https://www.codefactor.io/repository/github/micgro42/csscolornamefinder/badge)](https://www.codefactor.io/repository/github/micgro42/csscolornamefinder)
 - [![codebeat badge](https://codebeat.co/badges/6d3df6a7-835d-4e68-b3ac-3944b7ff34b8)](https://codebeat.co/projects/github-com-micgro42-csscolornamefinder-master)
-- [![Coverage Status](https://coveralls.io/repos/github/micgro42/cssColorNameFinder/badge.svg?branch=master)](https://coveralls.io/github/micgro42/cssColorNameFinder?branch=master)
-- [![Greenkeeper badge](https://badges.greenkeeper.io/micgro42/cssColorNameFinder.svg)](https://greenkeeper.io/)
+- [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=micgro42_cssColorNameFinder&metric=coverage)](https://sonarcloud.io/dashboard?id=micgro42_cssColorNameFinder)
