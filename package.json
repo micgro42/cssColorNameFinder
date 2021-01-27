@@ -53,6 +53,9 @@
     ],
     "*.js": [
       "eslint --fix"
+    ],
+    "*.yml": [
+      "prettier --write"
     ]
   }
 }
