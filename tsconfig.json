@@ -1,22 +1,43 @@
 {
-    "compilerOptions": {
-        "sourceMap": true,
-        "strict": true,
-        "noImplicitReturns": true,
-        "noUncheckedIndexedAccess": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "target": "esnext"
-    },
-    "include": [
-        "./src/**/*",
-        "./tests/**/*"
+  "compilerOptions": {
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "jsx": "preserve",
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "esnext",
+    "baseUrl": ".",
+    "types": [
+      "webpack-env",
+      "jest"
     ],
-    "exclude": [
-        "node_modules"
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

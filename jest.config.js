@@ -1,10 +1,8 @@
 module.exports = {
+    preset: '@vue/cli-plugin-unit-jest/presets/typescript-and-babel',
     transform: {
-        '.*\\.(vue)$': 'vue-jest',
-        '^.+\\.ts?$': 'ts-jest',
+        '^.+\\.vue$': 'vue-jest',
     },
-    testRegex: '/tests/.*\\.(test|spec)?\\.(ts|tsx)$',
+    testMatch: ['**/tests/**/?(*.)+(spec).ts'],
     collectCoverageFrom: ['src/**/*.{ts,vue}'],
-    snapshotSerializers: ['jest-serializer-vue'],
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };

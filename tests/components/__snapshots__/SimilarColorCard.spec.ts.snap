@@ -10,12 +10,10 @@ exports[`SimilarColorCard matches snapshot 1`] = `
     <h3>
       red
     </h3>
-     
     <p>
       Distance: 7
     </p>
   </div>
-   
   <div
     class="similarColorCard__colorArea"
     style="background-color: red;"

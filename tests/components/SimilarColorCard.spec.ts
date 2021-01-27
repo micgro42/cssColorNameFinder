@@ -4,7 +4,7 @@ import SimilarColorCard from '../../src/components/SimilarColorCard/SimilarColor
 describe('SimilarColorCard', () => {
     it('matches snapshot', () => {
         const wrapper = shallowMount(SimilarColorCard, {
-            propsData: {
+            props: {
                 colorName: 'red',
                 distance: 7.1,
             },

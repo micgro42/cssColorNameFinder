@@ -1,6 +1,4 @@
-import Vue, { VNode } from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
 
-new Vue({
-    render: (h): VNode => h(App),
-}).$mount('#app');
+createApp(App).mount('#app');

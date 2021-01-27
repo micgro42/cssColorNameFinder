@@ -3,11 +3,9 @@ module.exports = {
     env: {
         node: true,
     },
-    parser: '@typescript-eslint/parser',
     extends: [
-        'plugin:vue/vue3-essential',
+        'plugin:vue/vue3-recommended',
         'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
         '@vue/typescript/recommended',
         'prettier/@typescript-eslint',
         'plugin:prettier/recommended',
@@ -16,7 +14,6 @@ module.exports = {
     ],
     parserOptions: {
         ecmaVersion: 2020,
-        sourceType: 'module',
     },
     rules: {
         '@typescript-eslint/no-var-requires': 'off',
@@ -24,10 +21,12 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': ['error'],
         '@typescript-eslint/explicit-function-return-type': ['error'],
         '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'explicit' }],
+        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     },
     overrides: [
         {
-            files: ['**/tests/unit/**/*.spec.ts'],
+            files: ['**/tests/**/*.spec.ts'],
             env: {
                 jest: true,
             },
