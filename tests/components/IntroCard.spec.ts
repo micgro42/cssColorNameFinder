@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import IntroCard from '../../src/components/IntroCard/IntroCard.vue';
+import IntroCard from '../../src/components/IntroCard.vue';
 
 describe('IntroCard', () => {
   it('matches snapshot', () => {
