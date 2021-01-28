@@ -9,11 +9,11 @@ describe('sort color list', () => {
       new Color(230, 230, 250, 'lavender'),
     ]);
     colorList.sortByRGB(123, 231, 213);
-    const result = colorList.getColorNamesDistance();
+    const result = colorList.getColorsDistance();
     expect(result).toEqual([
-      ['lavender', 113.22102278287367],
-      ['gold', 251.09559932424145],
-      ['red', 340.81373211770676],
+      ['lavender', [230, 230, 250], 113.22102278287367],
+      ['gold', [255, 215, 0], 251.09559932424145],
+      ['red', [255, 0, 0], 340.81373211770676],
     ]);
   });
 });

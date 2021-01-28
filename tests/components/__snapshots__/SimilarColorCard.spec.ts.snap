@@ -5,18 +5,40 @@ exports[`SimilarColorCard matches snapshot 1`] = `
   class="similarColorCard"
 >
   <div
-    class="similarColorCard__header"
-  >
-    <h3>
-      red
-    </h3>
-    <p>
-      Distance: 7
-    </p>
-  </div>
-  <div
     class="similarColorCard__colorArea"
-    style="background-color: red;"
+  >
+    <div
+      class="similarColorCard__colorHalf"
+      style="background-color: red;"
+    />
+    <div
+      class="similarColorCard__colorHalf"
+      style="background-color: rgb(250, 5, 5);"
+    />
+  </div>
+  <color-names-stub
+    color-hex="#FF0000"
+    color-name="red"
+    original-hex="#FA0505"
   />
+  <div
+    class="similarColorCard__comparison"
+  >
+    <color-difference-detail-stub
+      original-value="20%"
+      section-name="Luminosity"
+      similar-value="21%"
+    />
+    <color-difference-detail-stub
+      original-value="98%"
+      section-name="Saturation"
+      similar-value="100%"
+    />
+    <color-difference-detail-stub
+      original-value="0°"
+      section-name="Hue"
+      similar-value="0°"
+    />
+  </div>
 </div>
 `;

@@ -13,6 +13,6 @@ export default class SortColorsUseCase {
   public sortColors(request: SortColorsRequest): SortColorsResponse {
     const colorsList: ColorList = this.repository.getColorList();
     colorsList.sortByRGB(request.getRed(), request.getGreen(), request.getBlue());
-    return new SortColorsResponse(colorsList.getColorNamesDistance());
+    return new SortColorsResponse(colorsList.getColorsDistance());
   }
 }

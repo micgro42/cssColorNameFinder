@@ -9,7 +9,8 @@
         v-for="color in similarColors"
         :key="color[0]"
         :color-name="color[0]"
-        :distance="color[1]"
+        :color-parts="color[1]"
+        :original-parts="originalColorParts"
       />
     </div>
   </div>
@@ -34,7 +35,7 @@ export default defineComponent({
     };
   },
   computed: {
-    similarColors(): [string, number][] {
+    similarColors(): [string, [number, number, number], number][] {
       if (!this.name) {
         return [];
       }
@@ -44,6 +45,13 @@ export default defineComponent({
       const requestModel = new SortColorsRequest(color.red(), color.green(), color.blue());
       const responseModel = sortColorsUC.sortColors(requestModel);
       return responseModel.getThreeNearestColors();
+    },
+    originalColorParts(): number[] | null {
+      if (!this.name) {
+        return null;
+      }
+      const color = Color(this.name);
+      return color.rgb().array();
     },
   },
 });
