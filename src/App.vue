@@ -16,6 +16,7 @@
 </template>
 
 <script lang="ts">
+import Color from 'color';
 import { defineComponent } from 'vue';
 import IntroCard from './components/IntroCard.vue';
 import SimilarColorCard from './components/SimilarColorCard.vue';
@@ -34,16 +35,13 @@ export default defineComponent({
   },
   computed: {
     similarColors(): [string, number][] {
-      const parsedInput = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(this.name);
-      if (!parsedInput || !parsedInput[1] || !parsedInput[2] || !parsedInput[3]) {
+      if (!this.name) {
         return [];
       }
-      const red: number = parseInt(parsedInput[1], 16);
-      const green: number = parseInt(parsedInput[2], 16);
-      const blue: number = parseInt(parsedInput[3], 16);
+      const color = Color(this.name);
 
       const sortColorsUC = UseCaseFactory.newSortColorsUseCase();
-      const requestModel = new SortColorsRequest(red, green, blue);
+      const requestModel = new SortColorsRequest(color.red(), color.green(), color.blue());
       const responseModel = sortColorsUC.sortColors(requestModel);
       return responseModel.getThreeNearestColors();
     },
