@@ -20,9 +20,11 @@ export default class ColorList {
     });
   }
 
-  public getColorNamesDistance(): [string, number][] {
-    return this.colors.map(
-      (color: Color) => [color.getName(), color.getDistance()] as [string, number],
-    );
+  public getColorsDistance(): [string, [number, number, number], number][] {
+    return this.colors.map((color: Color) => [
+      color.getName(),
+      color.getRGB(),
+      color.getDistance(),
+    ]);
   }
 }

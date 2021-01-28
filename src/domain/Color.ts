@@ -1,8 +1,8 @@
 export default class Color {
-  private red: number;
-  private green: number;
-  private blue: number;
-  private colorName: string;
+  private readonly red: number;
+  private readonly green: number;
+  private readonly blue: number;
+  private readonly colorName: string;
   private distance?: number;
 
   public constructor(red: number, green: number, blue: number, colorName: string) {
@@ -31,5 +31,9 @@ export default class Color {
 
   public getName(): string {
     return this.colorName;
+  }
+
+  public getRGB(): [number, number, number] {
+    return [this.red, this.green, this.blue];
   }
 }

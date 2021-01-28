@@ -11,15 +11,18 @@ describe('App', () => {
     expect(similarColorCards.length).toBe(3);
     expect(similarColorCards[0]?.props()).toStrictEqual({
       colorName: 'lightblue',
-      distance: 14.352700094407323,
+      colorParts: [173, 216, 230],
+      originalParts: [171, 205, 239],
     });
     expect(similarColorCards[1]?.props()).toStrictEqual({
       colorName: 'lightsteelblue',
-      distance: 19.87460691435179,
+      colorParts: [176, 196, 222],
+      originalParts: [171, 205, 239],
     });
     expect(similarColorCards[2]?.props()).toStrictEqual({
       colorName: 'powderblue',
-      distance: 21.61018278497431,
+      colorParts: [176, 224, 230],
+      originalParts: [171, 205, 239],
     });
   });
 });
