@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import SimilarColorCard from '../../src/components/SimilarColorCard/SimilarColorCard.vue';
+import SimilarColorCard from '../../src/components/SimilarColorCard.vue';
 
 describe('SimilarColorCard', () => {
   it('matches snapshot', () => {

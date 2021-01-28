@@ -1,5 +1,5 @@
 import App from '@/App.vue';
-import SimilarColorCard from '@/components/SimilarColorCard/SimilarColorCard.vue';
+import SimilarColorCard from '@/components/SimilarColorCard.vue';
 import { shallowMount } from '@vue/test-utils';
 
 describe('App', () => {

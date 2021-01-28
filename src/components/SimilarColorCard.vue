@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-
 export default defineComponent({
   props: {
     colorName: {
@@ -37,13 +36,11 @@ export default defineComponent({
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background-color: white;
 }
-
 .similarColorCard__header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-
 .similarColorCard__colorArea {
   min-height: 10vh;
   border: 1px solid grey;

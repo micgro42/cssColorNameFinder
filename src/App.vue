@@ -17,8 +17,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import IntroCard from './components/IntroCard/IntroCard.vue';
-import SimilarColorCard from './components/SimilarColorCard/SimilarColorCard.vue';
+import IntroCard from './components/IntroCard.vue';
+import SimilarColorCard from './components/SimilarColorCard.vue';
 import SortColorsRequest from './usecases/SortColors/SortColorsRequest';
 import UseCaseFactory from './usecases/UseCaseFactory';
 
