@@ -14,6 +14,7 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "target": "esnext",
     "baseUrl": ".",
     "types": ["webpack-env", "jest"],
