@@ -7,9 +7,9 @@
       <h2>Colors close to {{ name }}:</h2>
       <SimilarColorCard
         v-for="color in similarColors"
-        :key="color[0]"
-        :color-name="color[0]"
-        :color-parts="color[1]"
+        :key="color.name"
+        :color-name="color.name"
+        :color-parts="color.rgb"
         :original-parts="originalColorParts"
       />
     </div>
@@ -17,12 +17,20 @@
 </template>
 
 <script lang="ts">
+import IntroCard from '@/components/IntroCard.vue';
+import SimilarColorCard from '@/components/SimilarColorCard.vue';
+import SortColorsRequest from '@/usecases/SortColors/SortColorsRequest';
+import UseCaseFactory from '@/usecases/UseCaseFactory';
 import Color from 'color';
 import { defineComponent } from 'vue';
-import IntroCard from './components/IntroCard.vue';
-import SimilarColorCard from './components/SimilarColorCard.vue';
-import SortColorsRequest from './usecases/SortColors/SortColorsRequest';
-import UseCaseFactory from './usecases/UseCaseFactory';
+
+type RGBTriple = [number, number, number];
+
+interface similarColorData {
+  name: string;
+  rgb: RGBTriple;
+  distance: number;
+}
 
 export default defineComponent({
   components: {
@@ -35,7 +43,7 @@ export default defineComponent({
     };
   },
   computed: {
-    similarColors(): [string, [number, number, number], number][] {
+    similarColors(): similarColorData[] {
       if (!this.name) {
         return [];
       }
@@ -44,14 +52,24 @@ export default defineComponent({
       const sortColorsUC = UseCaseFactory.newSortColorsUseCase();
       const requestModel = new SortColorsRequest(color.red(), color.green(), color.blue());
       const responseModel = sortColorsUC.sortColors(requestModel);
-      return responseModel.getThreeNearestColors();
+
+      // TODO: get rid of use-cases and use plain actions!
+      return responseModel.getThreeNearestColors().map(
+        (colorData: [string, RGBTriple, number]): similarColorData => {
+          return {
+            name: colorData[0],
+            rgb: colorData[1],
+            distance: colorData[2],
+          };
+        },
+      );
     },
-    originalColorParts(): number[] | null {
+    originalColorParts(): RGBTriple | null {
       if (!this.name) {
         return null;
       }
       const color = Color(this.name);
-      return color.rgb().array();
+      return color.rgb().array() as RGBTriple;
     },
   },
 });
