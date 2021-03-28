@@ -11,8 +11,6 @@ It uses jest as testing framework that natively works with both Typescript and V
 
 ## CI
 
-<<<<<<< HEAD
-
 - [![Build Status](https://travis-ci.com/micgro42/cssColorNameFinder.svg?branch=master)](https://travis-ci.com/micgro42/cssColorNameFinder)
 - [![Maintainability](https://api.codeclimate.com/v1/badges/da6d61da0e95ceece874/maintainability)](https://codeclimate.com/github/micgro42/cssColorNameFinder/maintainability)
 - [![CodeFactor](https://www.codefactor.io/repository/github/micgro42/csscolornamefinder/badge)](https://www.codefactor.io/repository/github/micgro42/csscolornamefinder)
