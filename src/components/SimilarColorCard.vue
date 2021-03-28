@@ -69,7 +69,7 @@
 import ColorDifferenceDetail from '@/components/ColorDifferenceDetail.vue';
 import ColorNames from '@/components/ColorNames.vue';
 import Color from 'color';
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   components: { ColorDifferenceDetail, ColorNames },
@@ -79,11 +79,11 @@ export default defineComponent({
       required: true,
     },
     colorParts: {
-      type: Array,
+      type: Array as PropType<number[]>,
       required: true,
     },
     originalParts: {
-      type: Array,
+      type: Array as PropType<number[]>,
       required: true,
     },
   },
