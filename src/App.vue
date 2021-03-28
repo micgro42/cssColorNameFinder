@@ -3,7 +3,7 @@
     <h1>CSS Color Name Finder</h1>
     <IntroCard v-if="similarColors.length === 0"></IntroCard>
     <label>Pick a color: <input v-model="name" type="color" /></label>
-    <div v-if="similarColors.length > 0">
+    <div v-if="originalColorParts && similarColors.length">
       <h2>Colors close to {{ name }}:</h2>
       <SimilarColorCard
         v-for="color in similarColors"

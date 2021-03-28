@@ -3,7 +3,7 @@
     "sourceMap": true,
     "strict": true,
     "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
+    "noUncheckedIndexedAccess": false,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -17,7 +17,7 @@
     "resolveJsonModule": true,
     "target": "esnext",
     "baseUrl": ".",
-    "types": ["webpack-env", "jest"],
+    "types": ["jest", "vite/client"],
     "paths": {
       "@/*": ["src/*"]
     },
