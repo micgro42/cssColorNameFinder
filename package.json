@@ -43,7 +43,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "test:unit": "jest",
-    "lint": "eslint --ext .ts,vue --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.ts,vue --ignore-path .gitignore --report-unused-disable-directives .",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
