@@ -44,7 +44,7 @@
         </p>
         <p v-else>
           <i>{{ colorName }}</i> is
-          <b>{{ Math.abs(lightnessDiff) }}&nbsp;percentage points less saturated</b>
+          <b>{{ Math.abs(saturationDiff) }}&nbsp;percentage points less saturated</b>
           than <i>{{ originalColor.hex() }}</i
           >.
         </p>
