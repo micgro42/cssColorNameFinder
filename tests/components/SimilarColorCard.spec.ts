@@ -2,17 +2,6 @@ import { shallowMount } from '@vue/test-utils';
 import SimilarColorCard from '../../src/components/SimilarColorCard.vue';
 
 describe('SimilarColorCard', () => {
-  it('matches snapshot', () => {
-    const wrapper = shallowMount(SimilarColorCard, {
-      props: {
-        colorName: 'red',
-        colorParts: [255, 0, 0],
-        originalParts: [250, 5, 5],
-      },
-    });
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
   it('calculates differences in colors correctly', () => {
     const wrapper = shallowMount(SimilarColorCard, {
       props: {
