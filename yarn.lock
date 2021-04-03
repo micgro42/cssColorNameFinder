@@ -5529,10 +5529,10 @@ vue-jest@^5.0.0-0:
     extract-from-css "^0.4.4"
     tsconfig "^7.0.0"
 
-vue-tsc@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-0.0.16.tgz#4a2a2e27db499620b7ad1905bf47222d98fbd981"
-  integrity sha512-C5eporZzv3i86XM9W/MD9JAHwGPaI4ICCqWghCkn+r1A5GaRRTvvzUm0g8QXtSq54ISstRpoqXH8CbHW6kuF3w==
+vue-tsc@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-0.0.18.tgz#8844ae115ce9889812601e3d6c3aa8d2add17729"
+  integrity sha512-l612nrg+K53c9FA+/tlY2SHbzX87aMYIQHaXpmKy1AexoSOIkVxHenwbf63h0yplLPkObHwPGNFQPkdhzCiltQ==
   dependencies:
     unzipper "0.10.11"
 
