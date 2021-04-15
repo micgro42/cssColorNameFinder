@@ -38,6 +38,13 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['**/*.js'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+      },
+    },
+    {
       files: ['**/tests/**/*.spec.ts'],
       env: {
         jest: true,
