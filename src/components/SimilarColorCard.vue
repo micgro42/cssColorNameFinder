@@ -4,60 +4,69 @@
       <div class="similarColorCard__colorHalf" :style="'background-color: ' + colorName" />
       <div
         class="similarColorCard__colorHalf"
-        :style="'background-color: ' + originalColor.hex()"
+        :style="'background-color: ' + originalColor.toString()"
       />
     </div>
-    <ColorNames
-      :color-name="colorName"
-      :color-hex="similarColor.hex()"
-      :original-hex="originalColor.hex()"
-    />
+    <ColorNames :color-name="colorName" :color-hex="similarHex" :original-hex="originalHex" />
     <div class="similarColorCard__comparison">
       <ColorDifferenceDetail
-        section-name="Luminosity"
-        :similar-value="`${Math.round(similarColor.luminosity() * 100)}%`"
-        :original-value="`${Math.round(originalColor.luminosity() * 100)}%`"
+        section-name="Lightness"
+        :similar-value="round(similarColor.lch[0], 2).toString()"
+        :original-value="round(originalColor.lch[0], 2).toString()"
       >
         <p v-if="lightnessDiff > 0">
           <i>{{ colorName }}</i> is
-          <b>{{ Math.abs(lightnessDiff) }}&nbsp;percentage points lighter</b>
-          than <i>{{ originalColor.hex() }}</i
+          <b>{{ round(Math.abs(lightnessDiff), 2) }}&nbsp;points lighter</b>
+          than <i>{{ originalHex }}</i
+          >.
+        </p>
+        <p v-else-if="lightnessDiff < 0">
+          <i>{{ colorName }}</i> is
+          <b>{{ round(Math.abs(lightnessDiff), 2) }}&nbsp;points darker</b>
+          than <i>{{ originalHex }}</i
           >.
         </p>
         <p v-else>
           <i>{{ colorName }}</i> is
-          <b>{{ Math.abs(lightnessDiff) }}&nbsp;percentage points darker</b>
-          than <i>{{ originalColor.hex() }}</i
+          <b>exactly as light</b>
+          as <i>{{ originalHex }}</i
           >.
         </p>
       </ColorDifferenceDetail>
       <ColorDifferenceDetail
-        section-name="Saturation"
-        :similar-value="`${Math.round(similarColor.saturationv())}%`"
-        :original-value="`${Math.round(originalColor.saturationv())}%`"
+        section-name="Chroma"
+        :similar-value="`${round(similarColor.lch[1], 2)}`"
+        :original-value="`${round(originalColor.lch[1], 2)}`"
       >
-        <p v-if="saturationDiff > 0">
+        <p v-if="chromaDiff > 0">
           <i>{{ colorName }}</i> is
-          <b>{{ Math.abs(saturationDiff) }}&nbsp;percentage points more saturated</b>
-          than <i>{{ originalColor.hex() }}</i
+          <b>{{ round(Math.abs(chromaDiff), 2) }}&nbsp;points more intense</b>
+          than <i>{{ originalHex }}</i
+          >.
+        </p>
+        <p v-else-if="chromaDiff < 0">
+          <i>{{ colorName }}</i> is
+          <b>{{ round(Math.abs(chromaDiff), 2) }}&nbsp;points less intense</b>
+          than <i>{{ originalHex }}</i
           >.
         </p>
         <p v-else>
           <i>{{ colorName }}</i> is
-          <b>{{ Math.abs(saturationDiff) }}&nbsp;percentage points less saturated</b>
-          than <i>{{ originalColor.hex() }}</i
+          <b>exactly as intense</b>
+          as <i>{{ originalHex }}</i
           >.
         </p>
       </ColorDifferenceDetail>
       <ColorDifferenceDetail
-        section-name="Hue"
-        :similar-value="`${Math.round(similarColor.hue())}°`"
-        :original-value="`${Math.round(originalColor.hue())}°`"
+        v-if="!isNaN(hueDiff)"
+        section-name="LCH Hue"
+        :similar-value="`${round(similarColor.lch[2], 2)}°`"
+        :original-value="`${round(originalColor.lch[2], 2)}°`"
       >
         <p>
           <i>{{ colorName }}</i> differs by
-          <b>{{ hueDiff }}&nbsp;degrees</b>
-          from <i>{{ originalColor.hex() }}</i
+          <b>{{ round(Math.abs(hueDiff), 2) }}&nbsp;degrees</b>
+          from <i>{{ originalHex }}</i
           >.
         </p>
       </ColorDifferenceDetail>
@@ -68,7 +77,7 @@
 <script lang="ts">
 import ColorDifferenceDetail from '@/components/ColorDifferenceDetail.vue';
 import ColorNames from '@/components/ColorNames.vue';
-import Color from 'color';
+import Color from 'colorjs.io';
 import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
@@ -78,39 +87,54 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    colorParts: {
-      type: Array as PropType<number[]>,
+    similarColor: {
+      type: Object as PropType<Color>,
       required: true,
     },
-    originalParts: {
-      type: Array as PropType<number[]>,
+    originalColor: {
+      type: Object as PropType<Color>,
       required: true,
     },
   },
   computed: {
-    similarColor(): Color {
-      return Color.rgb(this.colorParts);
+    originalHex(): string {
+      return (
+        '#' +
+        this.originalColor.srgb
+          .map((fraction: number) => (fraction * 255).toString(16).padStart(2, '0'))
+          .join('')
+      );
     },
-    originalColor(): Color {
-      return Color.rgb(this.originalParts);
+    similarHex(): string {
+      return (
+        '#' +
+        this.similarColor.srgb
+          .map((fraction: number) => (fraction * 255).toString(16).padStart(2, '0'))
+          .join('')
+      );
     },
     lightnessDiff(): number {
-      return (
-        Math.round(this.similarColor.luminosity() * 100) -
-        Math.round(this.originalColor.luminosity() * 100)
-      );
+      return this.similarColor.lch[0] - this.originalColor.lch[0];
     },
-    saturationDiff(): number {
-      return (
-        Math.round(this.similarColor.saturationv()) - Math.round(this.originalColor.saturationv())
-      );
+    chromaDiff(): number {
+      return this.similarColor.lch[1] - this.originalColor.lch[1];
     },
     hueDiff(): number {
-      const diff = Math.round(Math.abs(this.similarColor.hue() - this.originalColor.hue()));
-      if (diff > 180) {
-        return 360 - diff;
-      }
-      return diff;
+      const normalizedSimilarHue =
+        this.similarColor.lch[2] > 180 ? this.similarColor.lch[2] - 360 : this.similarColor.lch[2];
+      const normalizedOriginalHue =
+        this.originalColor.lch[2] > 180
+          ? this.originalColor.lch[2] - 360
+          : this.originalColor.lch[2];
+      return normalizedSimilarHue - normalizedOriginalHue;
+      // return this.similarColor.lch[2] - this.originalColor.lch[2];
+    },
+  },
+  methods: {
+    round(number: number, decimals = 0): number {
+      return (
+        Math.round((number + Number.EPSILON) * Math.pow(10, decimals)) / Math.pow(10, decimals)
+      );
     },
   },
 });

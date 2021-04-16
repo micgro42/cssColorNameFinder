@@ -1,4 +1,3 @@
-import ColorList from './ColorList';
 export default interface ColorListRepository {
-  getColorList(): ColorList;
+  getColorList(): { name: string; red: number; green: number; blue: number }[];
 }
