@@ -2,7 +2,7 @@
   <div class="app">
     <h1>CSS Color Name Finder</h1>
     <IntroCard v-if="similarColors.length === 0" />
-    <label>Pick a color: <input v-model="name" type="color" /></label>
+    <label>Pick a color: <input type="color" @change="changeColor" /></label>
     <div v-if="originalColorParts && similarColors.length">
       <h2>Colors close to {{ name }}:</h2>
       <SimilarColorCard
@@ -70,6 +70,11 @@ export default defineComponent({
       }
       const color = Color(this.name);
       return color.rgb().array() as RGBTriple;
+    },
+  },
+  methods: {
+    changeColor(event: Event): void {
+      this.name = (event.target as HTMLInputElement).value;
     },
   },
 });
