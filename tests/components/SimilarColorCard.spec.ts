@@ -11,9 +11,9 @@ describe('SimilarColorCard', () => {
         originalColor: new Color('chocolate'),
       },
     });
-    expect(wrapper.vm.hueDiff).toBe(17);
-    expect(wrapper.vm.chromaDiff).toBe(5);
-    expect(wrapper.vm.lightnessDiff).toBe(1);
+    expect(wrapper.vm.hueDiff).toBe(14.86);
+    expect(wrapper.vm.chromaDiff).toBe(37.18);
+    expect(wrapper.vm.lightnessDiff).toBe(-2.34);
   });
 
   it('The difference in hue is always less than 180', () => {
@@ -24,6 +24,6 @@ describe('SimilarColorCard', () => {
         originalColor: new Color('deeppink'),
       },
     });
-    expect(wrapper.vm.hueDiff).toBe(56);
+    expect(wrapper.vm.hueDiff).toBe(43.68);
   });
 });
