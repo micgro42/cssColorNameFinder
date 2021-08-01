@@ -44,8 +44,7 @@ export default defineComponent({
         return [];
       }
       const closeNamedColors = getCloseNamedColors(this.name);
-      console.log(closeNamedColors);
-      return closeNamedColors;
+      return closeNamedColors.slice(0, 3);
     },
     originalColor(): Color | null {
       if (!this.name) {

@@ -16,13 +16,13 @@
       >
         <p v-if="lightnessDiff > 0">
           <i>{{ colorName }}</i> is
-          <b>{{ round(Math.abs(lightnessDiff), 2) }}&nbsp;points lighter</b>
+          <b>{{ lightnessDiff }}&nbsp;points lighter</b>
           than <i>{{ originalHex }}</i
           >.
         </p>
         <p v-else-if="lightnessDiff < 0">
           <i>{{ colorName }}</i> is
-          <b>{{ round(Math.abs(lightnessDiff), 2) }}&nbsp;points darker</b>
+          <b>{{ Math.abs(lightnessDiff) }}&nbsp;points darker</b>
           than <i>{{ originalHex }}</i
           >.
         </p>
@@ -40,13 +40,13 @@
       >
         <p v-if="chromaDiff > 0">
           <i>{{ colorName }}</i> is
-          <b>{{ round(Math.abs(chromaDiff), 2) }}&nbsp;points more intense</b>
+          <b>{{ chromaDiff }}&nbsp;points more intense</b>
           than <i>{{ originalHex }}</i
           >.
         </p>
         <p v-else-if="chromaDiff < 0">
           <i>{{ colorName }}</i> is
-          <b>{{ round(Math.abs(chromaDiff), 2) }}&nbsp;points less intense</b>
+          <b>{{ Math.abs(chromaDiff) }}&nbsp;points less intense</b>
           than <i>{{ originalHex }}</i
           >.
         </p>
@@ -65,7 +65,7 @@
       >
         <p>
           <i>{{ colorName }}</i> differs by
-          <b>{{ round(Math.abs(hueDiff), 2) }}&nbsp;degrees</b>
+          <b>{{ hueDiff }}&nbsp;degrees</b>
           from <i>{{ originalHex }}</i
           >.
         </p>
@@ -114,10 +114,12 @@ export default defineComponent({
       );
     },
     lightnessDiff(): number {
-      return this.similarColor.lch[0] - this.originalColor.lch[0];
+      const lightnessDiff = this.similarColor.lch[0] - this.originalColor.lch[0];
+      return this.round(lightnessDiff, 2);
     },
     chromaDiff(): number {
-      return this.similarColor.lch[1] - this.originalColor.lch[1];
+      const chromaDiff = this.similarColor.lch[1] - this.originalColor.lch[1];
+      return this.round(chromaDiff, 2);
     },
     hueDiff(): number {
       const normalizedSimilarHue =
@@ -126,8 +128,8 @@ export default defineComponent({
         this.originalColor.lch[2] > 180
           ? this.originalColor.lch[2] - 360
           : this.originalColor.lch[2];
-      return normalizedSimilarHue - normalizedOriginalHue;
-      // return this.similarColor.lch[2] - this.originalColor.lch[2];
+      const diff = normalizedSimilarHue - normalizedOriginalHue;
+      return this.round(Math.abs(diff), 2);
     },
   },
   methods: {
