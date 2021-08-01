@@ -19,10 +19,7 @@
     "target": "esnext",
     "baseUrl": ".",
     "types": ["jest", "vite/client"],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/@types"
-    ],
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
     "paths": {
       "@/*": ["src/*"]
     },
