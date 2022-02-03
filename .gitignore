@@ -1,6 +1,9 @@
 dist/
 coverage/
 
+# Rollup statistics and visualizations
+stats.html
+
 node_modules/
 
 # local env files
