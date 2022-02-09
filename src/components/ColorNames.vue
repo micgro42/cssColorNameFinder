@@ -3,6 +3,7 @@
     <div class="ColorNames__names">
       <!-- width 50%! -->
       <h3>{{ colorName }}</h3>
+      <h3>your color:</h3>
     </div>
     <div class="ColorNames__values">
       <span>{{ colorHex }}</span>
@@ -37,9 +38,9 @@ export default defineComponent({
   padding-bottom: 1em;
 }
 .ColorNames__names {
-  width: 50%;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 .ColorNames__values {
   display: flex;
