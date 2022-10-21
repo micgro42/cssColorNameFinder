@@ -1,13 +1,20 @@
 <template>
   <div class="similarColorCard">
     <div class="similarColorCard__colorArea">
-      <div class="similarColorCard__colorHalf" :style="'background-color: ' + colorName" />
+      <div
+        class="similarColorCard__colorHalf"
+        :style="'background-color: ' + colorName"
+      />
       <div
         class="similarColorCard__colorHalf"
         :style="'background-color: ' + originalColor.toString()"
       />
     </div>
-    <ColorNames :color-name="colorName" :color-hex="similarHex" :original-hex="originalHex" />
+    <ColorNames
+      :color-name="colorName"
+      :color-hex="similarHex"
+      :original-hex="originalHex"
+    />
     <div class="similarColorCard__comparison">
       <ColorDifferenceDetail
         section-name="Lightness"
