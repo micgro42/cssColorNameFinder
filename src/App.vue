@@ -15,7 +15,7 @@
         v-for="color in similarColors"
         :key="color.name"
         :color-name="color.name"
-        :similar-color="color.color"
+        :similar-color="color"
         :original-color="originalColor"
       />
     </div>
@@ -23,16 +23,14 @@
 </template>
 
 <script lang="ts">
-import getCloseNamedColors from '@/color/similarNamedColors';
+import getCloseNamedColors, {
+  ColorData,
+  getColorData,
+  NamedColorData,
+} from '@/color/similarNamedColors';
 import IntroCard from '@/components/IntroCard.vue';
 import SimilarColorCard from '@/components/SimilarColorCard.vue';
 import { defineComponent } from 'vue';
-import Color from 'colorjs.io';
-
-interface similarColorData {
-  name: string;
-  color: Color;
-}
 
 export default defineComponent({
   components: {
@@ -45,18 +43,18 @@ export default defineComponent({
     };
   },
   computed: {
-    similarColors(): similarColorData[] {
+    similarColors(): NamedColorData[] {
       if (!this.name) {
         return [];
       }
       const closeNamedColors = getCloseNamedColors(this.name);
       return closeNamedColors.slice(0, 3);
     },
-    originalColor(): Color | null {
+    originalColor(): ColorData | null {
       if (!this.name) {
         return null;
       }
-      return new Color(this.name);
+      return getColorData(this.name);
     },
   },
   methods: {

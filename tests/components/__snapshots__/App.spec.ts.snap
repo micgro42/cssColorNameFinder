@@ -1,0 +1,475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App shows similar colors if color was selected2 1`] = `
+<div
+  class="app"
+>
+  <h1>
+    CSS Color Name Finder
+  </h1>
+  <!--v-if-->
+  <label>
+     Pick a color: 
+    <input
+      type="color"
+    />
+  </label>
+  <div>
+    <h2>
+      Colors close to #abcdef:
+    </h2>
+    
+    <div
+      class="similarColorCard"
+    >
+      <div
+        class="similarColorCard__colorArea"
+      >
+        <div
+          class="similarColorCard__colorHalf"
+          style="background-color: lightsteelblue;"
+        />
+        <div
+          class="similarColorCard__colorHalf"
+          style="background-color: rgb(171, 205, 239);"
+        />
+      </div>
+      <div
+        class="ColorNames"
+      >
+        <div
+          class="ColorNames__names"
+        >
+          <!-- width 50%! -->
+          <h3>
+            lightsteelblue
+          </h3>
+          <h3>
+            your color:
+          </h3>
+        </div>
+        <div
+          class="ColorNames__values"
+        >
+          <span>
+            #b0c4de
+          </span>
+          <span>
+            #abcdef
+          </span>
+        </div>
+      </div>
+      <div
+        class="similarColorCard__comparison"
+      >
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            Lightness
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              78.26
+            </span>
+            <span>
+              80.77
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              lightsteelblue
+            </i>
+             is 
+            <b>
+              2.51 points darker
+            </b>
+             than 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            Chroma
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              15.7
+            </span>
+            <span>
+              21.62
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              lightsteelblue
+            </i>
+             is 
+            <b>
+              5.92 points less intense
+            </b>
+             than 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            LCH Hue
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              259.35°
+            </span>
+            <span>
+              254.01°
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              lightsteelblue
+            </i>
+             differs by 
+            <b>
+              5.34 degrees
+            </b>
+             from 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div
+      class="similarColorCard"
+    >
+      <div
+        class="similarColorCard__colorArea"
+      >
+        <div
+          class="similarColorCard__colorHalf"
+          style="background-color: lightskyblue;"
+        />
+        <div
+          class="similarColorCard__colorHalf"
+          style="background-color: rgb(171, 205, 239);"
+        />
+      </div>
+      <div
+        class="ColorNames"
+      >
+        <div
+          class="ColorNames__names"
+        >
+          <!-- width 50%! -->
+          <h3>
+            lightskyblue
+          </h3>
+          <h3>
+            your color:
+          </h3>
+        </div>
+        <div
+          class="ColorNames__values"
+        >
+          <span>
+            #87cefa
+          </span>
+          <span>
+            #abcdef
+          </span>
+        </div>
+      </div>
+      <div
+        class="similarColorCard__comparison"
+      >
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            Lightness
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              79.29
+            </span>
+            <span>
+              80.77
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              lightskyblue
+            </i>
+             is 
+            <b>
+              1.48 points darker
+            </b>
+             than 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            Chroma
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              32.48
+            </span>
+            <span>
+              21.62
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              lightskyblue
+            </i>
+             is 
+            <b>
+              10.86 points more intense
+            </b>
+             than 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            LCH Hue
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              243.62°
+            </span>
+            <span>
+              254.01°
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              lightskyblue
+            </i>
+             differs by 
+            <b>
+              10.39 degrees
+            </b>
+             from 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <div
+      class="similarColorCard"
+    >
+      <div
+        class="similarColorCard__colorArea"
+      >
+        <div
+          class="similarColorCard__colorHalf"
+          style="background-color: skyblue;"
+        />
+        <div
+          class="similarColorCard__colorHalf"
+          style="background-color: rgb(171, 205, 239);"
+        />
+      </div>
+      <div
+        class="ColorNames"
+      >
+        <div
+          class="ColorNames__names"
+        >
+          <!-- width 50%! -->
+          <h3>
+            skyblue
+          </h3>
+          <h3>
+            your color:
+          </h3>
+        </div>
+        <div
+          class="ColorNames__values"
+        >
+          <span>
+            #87ceeb
+          </span>
+          <span>
+            #abcdef
+          </span>
+        </div>
+      </div>
+      <div
+        class="similarColorCard__comparison"
+      >
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            Lightness
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              78.85
+            </span>
+            <span>
+              80.77
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              skyblue
+            </i>
+             is 
+            <b>
+              1.92 points darker
+            </b>
+             than 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            Chroma
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              27.97
+            </span>
+            <span>
+              21.62
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              skyblue
+            </i>
+             is 
+            <b>
+              6.35 points more intense
+            </b>
+             than 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+        <div
+          class="ColorDifferenceDetail"
+        >
+          <h4
+            class="ColorDifferenceDetail__headline"
+          >
+            LCH Hue
+          </h4>
+          <div
+            class="ColorDifferenceDetail__values"
+          >
+            <span>
+              231.17°
+            </span>
+            <span>
+              254.01°
+            </span>
+          </div>
+          
+          <p>
+            <i>
+              skyblue
+            </i>
+             differs by 
+            <b>
+              22.84 degrees
+            </b>
+             from 
+            <i>
+              #abcdef
+            </i>
+            . 
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+`;
