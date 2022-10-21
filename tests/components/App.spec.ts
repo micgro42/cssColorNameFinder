@@ -1,29 +1,18 @@
+import { nextTick } from 'vue';
 import App from '@/App.vue';
 import SimilarColorCard from '@/components/SimilarColorCard.vue';
-import { shallowMount } from '@vue/test-utils';
-import Color from 'colorjs.io';
+import { mount } from '@vue/test-utils';
 
 describe('App', () => {
-  it('shows similar color if color was selected', async () => {
-    const wrapper = shallowMount(App);
+  it('shows similar colors if color was selected2', async () => {
+    const wrapper = mount(App);
     wrapper.setData({ name: '#abcdef' });
-    await wrapper.vm.$nextTick();
+    await nextTick();
     const similarColorCards = wrapper.findAllComponents(SimilarColorCard);
     expect(similarColorCards.length).toBe(3);
-    expect(similarColorCards[0]?.props()).toStrictEqual({
-      colorName: 'lightsteelblue',
-      originalColor: new Color('#abcdef'),
-      similarColor: new Color('lightsteelblue'),
-    });
-    expect(similarColorCards[1]?.props()).toStrictEqual({
-      colorName: 'lightskyblue',
-      originalColor: new Color('#abcdef'),
-      similarColor: new Color('lightskyblue'),
-    });
-    expect(similarColorCards[2]?.props()).toStrictEqual({
-      colorName: 'skyblue',
-      originalColor: new Color('#abcdef'),
-      similarColor: new Color('skyblue'),
-    });
+    expect(similarColorCards[0]?.props('colorName')).toBe('lightsteelblue');
+    expect(similarColorCards[1]?.props('colorName')).toBe('lightskyblue');
+    expect(similarColorCards[2]?.props('colorName')).toBe('skyblue');
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

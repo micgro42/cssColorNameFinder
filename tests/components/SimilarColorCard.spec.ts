@@ -1,5 +1,5 @@
+import { getColorData } from '@/color/similarNamedColors';
 import { shallowMount } from '@vue/test-utils';
-import Color from 'colorjs.io';
 import SimilarColorCard from '../../src/components/SimilarColorCard.vue';
 
 describe('SimilarColorCard', () => {
@@ -7,8 +7,8 @@ describe('SimilarColorCard', () => {
     const wrapper = shallowMount(SimilarColorCard, {
       props: {
         colorName: 'red',
-        similarColor: new Color('red'),
-        originalColor: new Color('chocolate'),
+        similarColor: { name: 'red', ...getColorData('red') },
+        originalColor: getColorData('chocolate'),
       },
     });
     expect(wrapper.vm.hueDiff).toBe(14.86);
@@ -20,8 +20,8 @@ describe('SimilarColorCard', () => {
     const wrapper = shallowMount(SimilarColorCard, {
       props: {
         colorName: 'red',
-        similarColor: new Color('red'),
-        originalColor: new Color('deeppink'),
+        similarColor: { name: 'red', ...getColorData('red') },
+        originalColor: getColorData('deeppink'),
       },
     });
     expect(wrapper.vm.hueDiff).toBe(43.68);
