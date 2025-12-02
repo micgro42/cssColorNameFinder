@@ -18,7 +18,7 @@
     "resolveJsonModule": true,
     "target": "esnext",
     "baseUrl": ".",
-    "types": ["jest", "vite/client"],
+    "types": ["jest"],
     "typeRoots": ["./node_modules/@types", "./src/@types"],
     "paths": {
       "@/*": ["src/*"]
