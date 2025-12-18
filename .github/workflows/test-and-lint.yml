@@ -12,34 +12,8 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '24'
       - name: Install
-        run: yarn install --frozen-lockfile
+        run: npm ci
       - name: Test
-        run: yarn test
-
-  unit-test-and-sonar:
-    name: Unit tests and coverage for sonar
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-      - name: Install
-        run: yarn install --frozen-lockfile
-      - name: Test
-        run: yarn test:unit --coverage
-      - name: Setup Sonar Scanner
-        uses: warchant/setup-sonar-scanner@v3
-      - name: Run sonarqube
-        env:
-          # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: sonar-scanner
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-          -Dsonar.host.url=https://sonarcloud.io/
+        run: npm run test

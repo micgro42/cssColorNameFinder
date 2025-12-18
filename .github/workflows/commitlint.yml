@@ -12,8 +12,8 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '24'
       - name: Install
-        run: yarn install --frozen-lockfile
+        run: npm ci
       - name: Lint commits
-        run: yarn commitlint --verbose --from `git log -1 HEAD^1 --pretty=format:'%H'`
+        run: npx commitlint --from f0082a4
