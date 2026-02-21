@@ -1,6 +1,8 @@
 <template>
   <div class="ColorDifferenceDetail">
-    <h4 class="ColorDifferenceDetail__headline">{{ sectionName }}</h4>
+    <h4 class="ColorDifferenceDetail__headline">
+      {{ sectionName }}
+    </h4>
     <div class="ColorDifferenceDetail__values">
       <span>{{ similarValue }}</span>
       <span>{{ originalValue }}</span>
