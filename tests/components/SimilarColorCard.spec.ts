@@ -1,6 +1,7 @@
 import { getColorData } from '@/color/similarNamedColors';
 import { shallowMount } from '@vue/test-utils';
 import SimilarColorCard from '../../src/components/SimilarColorCard.vue';
+import { describe, it, expect } from 'vitest';
 
 describe('SimilarColorCard', () => {
   it('calculates differences in colors correctly', () => {

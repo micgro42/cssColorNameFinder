@@ -2,6 +2,7 @@ import { nextTick } from 'vue';
 import App from '@/App.vue';
 import SimilarColorCard from '@/components/SimilarColorCard.vue';
 import { mount } from '@vue/test-utils';
+import { describe, it, expect } from 'vitest';
 
 describe('App', () => {
   it('shows similar colors if color was selected2', async () => {

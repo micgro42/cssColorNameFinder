@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`App shows similar colors if color was selected2 1`] = `
+exports[`App > shows similar colors if color was selected2 1`] = `
 <div
   class="app"
 >
@@ -31,7 +31,7 @@ exports[`App shows similar colors if color was selected2 1`] = `
         />
         <div
           class="similarColorCard__colorHalf"
-          style="background-color: rgb(171, 205, 239);"
+          style="background-color: #abcdef;"
         />
       </div>
       <div
@@ -181,7 +181,7 @@ exports[`App shows similar colors if color was selected2 1`] = `
         />
         <div
           class="similarColorCard__colorHalf"
-          style="background-color: rgb(171, 205, 239);"
+          style="background-color: #abcdef;"
         />
       </div>
       <div
@@ -331,7 +331,7 @@ exports[`App shows similar colors if color was selected2 1`] = `
         />
         <div
           class="similarColorCard__colorHalf"
-          style="background-color: rgb(171, 205, 239);"
+          style="background-color: #abcdef;"
         />
       </div>
       <div
